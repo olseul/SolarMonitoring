@@ -1,0 +1,74 @@
+.xtable {
+  position: relative;
+
+  > .head {
+    overflow: hidden !important;
+
+    > table {
+      margin: 0px !important;
+      border-bottom-width: 0px !important;
+    }
+  }
+
+  > .body {
+    overflow-x: auto !important;
+
+    table {
+      margin: 0px !important;
+
+      > thead {
+        > tr {
+          > th {
+            border-top-width: 0px !important;
+            border-bottom-width: 0px !important;
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+          }
+        }
+      }
+    }
+  }
+
+  > .loading {
+    display: none;
+    width: 32px;
+    height: 25px;
+    background-repeat: no-repeat;
+  }
+}
+
+
+// X-Table Scroll
+// --------------------------------------------------
+.xtable.scroll {
+  > .body {
+    .table {
+      &.classic, &.expand {
+        .border-bottom-radius(0px);
+
+        > tbody {
+          > tr {
+            &:last-child > td {
+              &:first-child {
+                .border-bottom-left-radius(0px);
+              }
+
+              &:last-child {
+                .border-bottom-right-radius(0px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// X-Table NoWrap
+// --------------------------------------------------
+.xtable.nowrap {
+  > .body table > tbody td {
+    .text-overflow();
+  }
+}
